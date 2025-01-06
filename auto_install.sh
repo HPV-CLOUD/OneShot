@@ -19,6 +19,9 @@ center_text() {
     printf "%*s%s\n" $padding "" "$text"
 }
 
+# Определение ширины терминала
+TERM_WIDTH=$(tput cols)
+
 # Вывод баннера
 center_text " _  _ _____   __  _____ ___   _   __  __ "
 center_text "| || | _ \\ \\ / /_|_   _| __| /_\\ |  \\/  |"
