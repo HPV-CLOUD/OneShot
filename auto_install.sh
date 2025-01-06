@@ -11,34 +11,24 @@ RESET="\033[0m"
 # Очистка терминала
 clear
 
-# Функция для центрирования текста
-center_text() {
-    local text="$1"
-    local text_length=${#text}
-    local padding=$(( (TERM_WIDTH - text_length) / 2 ))
-    printf "%*s%s\n" $padding "" "$text"
-}
-
-# Определение ширины терминала
-TERM_WIDTH=$(tput cols)
-
-# Вывод баннера
-center_text " _  _ _____   __  _____ ___   _   __  __ "
-center_text "| || | _ \\ \\ / /_|_   _| __| /_\\ |  \\/  |"
-center_text "| __ |  _/\\ V /___|| | | _| / _ \\| |\\/| |"
-center_text "|_||_|_|   \\_/     |_| |___/_/ \\_\\_|  |_|"
-center_text "+-----------------------------------------+"
-center_text "| Контент: t.me/HPV_TEAM /// t.me/HPV_PRO |"
-center_text "+-----------------------------------------+"
-center_text "| Сотрудничество: t.me/HPV_BASE |"
-center_text "+-------------------------------+"
-center_text "| Автор: t.me/A_KTO_Tbl |"
-center_text "+-----------------------+"
+# Баннер с цветами
+echo -e "${MAGENTA} _  _ _____   __  _____ ___   _   __  __${RESET}"
+echo -e "${MAGENTA}| || | _ \\ \\ / /_|_   _| __| /_\\ |  \\/  |${RESET}"
+echo -e "${MAGENTA}| __ |  _/\\ V /___|| | | _| / _ \\| |\\/| |${RESET}"
+echo -e "${MAGENTA}|_||_|_|   \\_/     |_| |___/_/ \\_\\_|  |_|${RESET}"
+echo -e "${MAGENTA}+-----------------------------------------+${RESET}"
+echo -e "${MAGENTA}| Контент: t.me/HPV_TEAM /// t.me/HPV_PRO |${RESET}"
+echo -e "${MAGENTA}+-----------------------------------------+${RESET}"
+echo -e "${MAGENTA}| Сотрудничество: t.me/HPV_BASE |${RESET}"
+echo -e "${MAGENTA}+-------------------------------+${RESET}"
+echo -e "${MAGENTA}| Автор: t.me/A_KTO_Tbl |${RESET}"
+echo -e "${MAGENTA}+-----------------------+${RESET}"
 
 # Проверка наличия утилиты expect
 if ! command -v expect &> /dev/null; then
     echo -e "${BLUE}Установка \`expect\` для автоматизации ввода...${RESET}"
     pkg install -y expect > /dev/null 2>&1
+    echo -e "${GREEN}Установка \`expect\` завершена.${RESET}"
 fi
 
 # Настройка зеркал репозиториев
