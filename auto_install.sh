@@ -26,7 +26,7 @@ echo -e "${MAGENTA}+-----------------------+${RESET}"
 
 # Проверка наличия утилиты expect
 if ! command -v expect &> /dev/null; then
-    echo -e "${BLUE}Установка \`expect\` для автоматизации ввода...${RESET}"
+    echo -e "\n${BLUE}Установка \`expect\` для автоматизации ввода...${RESET}"
     pkg install -y expect > /dev/null 2>&1
     echo -e "${GREEN}Установка \`expect\` завершена.${RESET}"
 fi
